@@ -61,40 +61,55 @@
 //       console.log(firstName + ' is a man');
 // }
 
-//Functions
-function calculateAge(birthYear) {
-  return 2020 - birthYear;
-}
-var myAge = calculateAge(1981);
-console.log(myAge);
+// //Functions
+// function calculateAge(birthYear) {
+//   return 2020 - birthYear;
+// }
+// var myAge = calculateAge(1981);
+// console.log(myAge);
 
-function yearsUntilRetirement(year, name) {
-  var age = calculateAge(year);
-  var retirement = 65 - age;
+// function yearsUntilRetirement(year, name) {
+//   var age = calculateAge(year);
+//   var retirement = 65 - age;
 
-  if (retirement > 0) {
-    console.log(name + ' retires in ' + retirement + ' years.');
-  } else {
-    console.log(name + ' is already retired');
-  }
-}
-yearsUntilRetirement(1934, 'John');
+//   if (retirement > 0) {
+//     console.log(name + ' retires in ' + retirement + ' years.');
+//   } else {
+//     console.log(name + ' is already retired');
+//   }
+// }
+// yearsUntilRetirement(1934, 'John');
 
 
-//Function expression
-var whatDoYouDo = function(job, firstName) {
-  switch(job) {
-    case 'teacher':
-      return firstName + ' teaches kids how to code';
-    case 'designer':
-      return firstName + ' designs websites';
-    case 'driver':
-      return firstName + ' drives an uber';
-    default:
-      return firstName + ' does something else'; 
-  }
-}
+// //Function expression
+// var whatDoYouDo = function(job, firstName) {
+//   switch(job) {
+//     case 'teacher':
+//       return firstName + ' teaches kids how to code';
+//     case 'designer':
+//       return firstName + ' designs websites';
+//     case 'driver':
+//       return firstName + ' drives an uber';
+//     default:
+//       return firstName + ' does something else'; 
+//   }
+// }
 
-console.log(whatDoYouDo('teacher', 'John'));
-console.log(whatDoYouDo('designer', 'Mark'));
-console.log(whatDoYouDo('retired', 'James'));
+// console.log(whatDoYouDo('teacher', 'John'));
+// console.log(whatDoYouDo('designer', 'Mark'));
+// console.log(whatDoYouDo('retired', 'James'));
+
+
+//Objects and methods
+var john = { firstName: "John",
+             lastName: "Smith",
+             yearOfBirth: 1990,
+             family: ["Jane", "Bob", "Steve"],
+             isMarried: false,
+             calcAge: function() {
+               this.age = 2020 - this.yearOfBirth
+             }
+            }
+
+john.calcAge();
+console.log(john);
