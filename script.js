@@ -113,3 +113,29 @@ var john = { firstName: "John",
 
 john.calcAge();
 console.log(john);
+
+
+// Loops
+// for loop
+var john = ['John', "Smith", 1990, 'designer', false];
+for (var i = 0; i < john.length; i++) {
+  console.log(john[i]);
+}
+
+// continue
+var james = ['James', "Jones", 1986, 'teacher', false];
+for (var i = 0; i < james.length; i++) {
+  if (typeof james[i] !== 'string') continue;
+    console.log(james[i]);
+}
+
+//break
+for (var i = 0; i < james.length; i++) {
+  if (typeof james[i] !== 'string') break;
+    console.log(james[i]);
+}
+
+// Looping backwards
+for ( var i = james.length -1; i >= 0; i--) {
+  console.log(james[i]);
+}
