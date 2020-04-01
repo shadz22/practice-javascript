@@ -20,43 +20,63 @@
 // console.log(firstName + ' ' + lastName);
 
 
-// Ternary operator and Switch statement
-var firstName = "John";
-var age = 22;
+// // Ternary operator and Switch statement
+// var firstName = "John";
+// var age = 22;
 
-age >= 18 ? console.log(firstName + ' drinks beer.') 
-: console.log(firstName + ' drinks juice');
+// age >= 18 ? console.log(firstName + ' drinks beer.') 
+// : console.log(firstName + ' drinks juice');
 
-var drink = age >=18 ? 'beer' : 'juice';
-console.log(drink);
+// var drink = age >=18 ? 'beer' : 'juice';
+// console.log(drink);
 
-//Switch Statement
-var job = 'teacher';
-switch (job) {
-  case 'teacher':
-    console.log(firstName + ' teaches kids how to code');
-    break;
-  case 'driver':
-    console.log(firstName + ' drives an uber in london');
-    break;
-  case 'designer':
-    console.log(firstName + ' designs websites');
-    break;
-  default:
-    console.log(firstName + ' does something else');
+// //Switch Statement
+// var job = 'teacher';
+// switch (job) {
+//   case 'teacher':
+//     console.log(firstName + ' teaches kids how to code');
+//     break;
+//   case 'driver':
+//     console.log(firstName + ' drives an uber in london');
+//     break;
+//   case 'designer':
+//     console.log(firstName + ' designs websites');
+//     break;
+//   default:
+//     console.log(firstName + ' does something else');
+// }
+
+// //another Switch example
+// switch (true) {
+//   case age < 13:
+//     console.log(firstName + ' is a boy');
+//     break;
+//   case age >= 13 && age <20:
+//     console.log(firstName + ' is a teenager');
+//     break;
+//   case age >=20 && age <30:
+//     console.log(firstName + ' is a young man');
+//     break;
+//     default:
+//       console.log(firstName + ' is a man');
+// }
+
+//Functions
+function calculateAge(birthYear) {
+  return 2020 - birthYear;
+}
+var myAge = calculateAge(1981);
+console.log(myAge);
+
+function yearsUntilRetirement(year, name) {
+  var age = calculateAge(year);
+  var retirement = 65 - age;
+
+  if (retirement > 0) {
+    console.log(name + ' retires in ' + retirement + ' years.');
+  } else {
+    console.log(name + ' is already retired');
+  }
 }
 
-//another Switch example
-switch (true) {
-  case age < 13:
-    console.log(firstName + ' is a boy');
-    break;
-  case age >= 13 && age <20:
-    console.log(firstName + ' is a teenager');
-    break;
-  case age >=20 && age <30:
-    console.log(firstName + ' is a young man');
-    break;
-    default:
-      console.log(firstName + ' is a man');
-}
+yearsUntilRetirement(1934, 'John');
