@@ -96,3 +96,28 @@ var fullAge = arrayCalc(ageArray, isFullAge);
 
 console.log(ageArray);
 console.log(fullAge);
+
+
+// First class Functions
+function interviewQuestions(job) {
+  if (job === 'teacher') {
+    return function(name) {
+      console.log(name + ', what do you teach?');
+    }
+  } else if (job === 'designer') {
+    return function(name) {
+      console.log('What do you design ' + name + '?');
+    }
+  } else {
+    return function(name) {
+      console.log('What do you do ' + name + '?');
+  }
+  }
+}
+
+var teacherQuestions = interviewQuestions('teacher');
+var designerQuestions = interviewQuestions('designer');
+
+teacherQuestions('John');
+designerQuestions('Mark');
+interviewQuestions('teacher')('James');
