@@ -32,6 +32,7 @@ console.log(jane);
 
 // Primitives vs Objects
 
+// Primitives
 var a = 23;
 var b = a;
 a = 46;
@@ -40,7 +41,6 @@ console.log(b);
 
 
 //Objects
-
 var obj1 = {
     name: "John",
     age: 26
@@ -53,7 +53,6 @@ console.log(obj2.age);
 
 
 // Functions
-
 var age = 27;
 var obj = {
     name: "James",
@@ -68,3 +67,32 @@ function change(a, b) {
 change(age, obj);
 console.log(age);
 console.log(obj.city);
+
+
+// Callback Functions
+
+var years = [1981, 1986, 2001, 2010, 1997];
+
+function arrayCalc(arr, fn) {
+  var arrayRes = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    arrayRes.push(fn(arr[i]));
+  }
+
+  return arrayRes;
+}
+
+function calcAge(year) {
+  return 2020 - year;
+}
+
+function isFullAge(age) {
+  return age >= 18;
+}
+
+var ageArray = arrayCalc(years, calcAge);
+var fullAge = arrayCalc(ageArray, isFullAge);
+
+console.log(ageArray);
+console.log(fullAge);
