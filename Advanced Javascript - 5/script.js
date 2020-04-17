@@ -121,3 +121,15 @@ var designerQuestions = interviewQuestions('designer');
 teacherQuestions('John');
 designerQuestions('Mark');
 interviewQuestions('teacher')('James');
+
+
+///IIFE 
+(function () {
+  var score = Math.random() * 10
+  console.log(score >= 5);
+})();
+
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck)
+})(5);
