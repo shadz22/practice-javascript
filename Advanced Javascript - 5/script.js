@@ -133,3 +133,42 @@ interviewQuestions('teacher')('James');
   var score = Math.random() * 10;
   console.log(score >= 5 - goodLuck)
 })(5);
+
+
+/// Closures
+function retirement(retirementAge) {
+  var a = ' years left until retirement';
+  return function (yearOfBirth) {
+    var age = 2020 - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+};
+
+var retirementUSA = retirement(66);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
+
+retirementUSA(1981);
+retirementGermany(1981);
+retirementIceland(1981);
+
+
+/// doing the interview example above, this time with using closures
+function interviewQuestions2(job) {
+  var msg = 'You are a ';
+  
+  return function(name) {
+    var message = console.log(name + ' ' + msg + job);
+
+    if (job === 'teacher') {
+      message;
+    } 
+    else if (job === 'designer') {
+      message;
+    } else {
+      console.log(name + ', what do you do?');
+    }
+  }
+}
+
+interviewQuestions2('designer')('John');
